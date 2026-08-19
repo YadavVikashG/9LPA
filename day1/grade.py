@@ -1,4 +1,5 @@
 marks =int(input("enter the your marks: "))
+student=input("enter your category: ")
 if marks>=95:
     print("you get A grade")
 elif marks>=80:
@@ -8,5 +9,9 @@ elif marks>=60:
 elif marks>=35:
     print("you get D grade")       
 else:
-    print("you get failed")        
+    print("you get failed") 
+if marks >50 and student=="obc":
     
+    print("you get job")           
+if marks >50 or student=="st":  
+ print("you get job")                 

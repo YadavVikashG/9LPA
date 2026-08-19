@@ -1,0 +1,2 @@
+git config --global alias.save '!git add . && git commit -m "Update" && git push'
+above can do everythings for and update code on github

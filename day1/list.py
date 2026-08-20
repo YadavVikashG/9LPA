@@ -18,5 +18,7 @@ books1= ["hindi","english","maths","science"]
 books2= ["social","computer"]
 books1.extend(books2)
 print(books1)
-
+for i in books1:
+    print(i)
+print(len(books1))
 

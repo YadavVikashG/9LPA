@@ -14,6 +14,9 @@ else:
 for i in range(1,101):
     if i % 2 != 0 :
         print(i)
+#Problem 4 find largest numbre
+numbers = [10, 25, 3, 48, 17, 92, 6]
+print(max(numbers))
 
 
  

@@ -16,7 +16,18 @@ for i in range(1,101):
         print(i)
 #Problem 4 find largest numbre
 numbers = [10, 25, 3, 48, 17, 92, 6]
-print(max(numbers))
+largest=numbers[0]
+for number in numbers:
+    if number > largest:
+        largest=number
+        print(number)
+#Problem 4
 
+def cal_salary(basic_salary):
+        hra =basic_salary *.20
+        da =basic_salary *.10
+        total_salary =basic_salary + hra+ da
+        return total_salary
+mysalary=cal_salary(25000)  
+print(mysalary)      
 
- 

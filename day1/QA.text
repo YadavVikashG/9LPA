@@ -1,0 +1,427 @@
+# Python Basic Questions and Answers
+
+## 1. What is a variable?
+
+A **variable** is a name used to store or refer to a value in a program.
+
+```python
+name = "Rahul"
+age = 21
+```
+
+Here:
+
+- `name` is a variable containing `"Rahul"`.
+- `age` is a variable containing `21`.
+
+Python variables do not need an explicitly declared type. Python automatically understands the type of value assigned to them.
+
+```python
+x = 10        # integer
+x = "Hello"   # now x refers to a string
+```
+
+## 2. Difference between `int`, `float`, `str`, and `bool`
+
+| Type | Meaning | Example |
+|---|---|---|
+| `int` | Whole number without decimal | `10`, `-5`, `0` |
+| `float` | Number containing a decimal | `3.14`, `10.0`, `-2.5` |
+| `str` | Text or sequence of characters | `"Hello"`, `"123"` |
+| `bool` | Logical value: true or false | `True`, `False` |
+
+Example:
+
+```python
+age = 21              # int
+price = 99.50         # float
+name = "Amit"         # str
+is_student = True     # bool
+```
+
+Important: `"123"` is a string, while `123` is an integer.
+
+```python
+"123" + "4"   # "1234"
+123 + 4       # 127
+```
+
+## 3. What does `input()` return?
+
+The `input()` function always returns the user’s input as a **string**.
+
+```python
+age = input("Enter your age: ")
+print(type(age))
+```
+
+Even if the user enters `21`, Python receives it as `"21"`.
+
+To use it as a number, convert it:
+
+```python
+age = int(input("Enter your age: "))
+price = float(input("Enter price: "))
+```
+
+You can also convert text into a Boolean, but `bool(input())` should be used carefully because any non-empty string becomes `True`.
+
+## 4. Difference between `/` and `//`
+
+### `/` — normal division
+
+The `/` operator performs division and generally returns a floating-point result.
+
+```python
+print(10 / 3)
+```
+
+Output:
+
+```text
+3.3333333333333335
+```
+
+### `//` — floor division
+
+The `//` operator returns the floor-division result, meaning it removes the fractional part by rounding down.
+
+```python
+print(10 // 3)
+```
+
+Output:
+
+```text
+3
+```
+
+For positive numbers, it may look like removing decimals. For negative numbers, it rounds down toward negative infinity:
+
+```python
+print(-10 // 3)   # -4
+```
+
+## 5. What does `%` do?
+
+The `%` operator returns the **remainder** after division. It is called the modulo operator.
+
+```python
+print(10 % 3)
+```
+
+Output:
+
+```text
+1
+```
+
+Because 3 goes into 10 three times, with 1 remaining.
+
+Common use: checking whether a number is even or odd.
+
+```python
+number = 8
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+```
+
+## 6. Difference between `=` and `==`
+
+### `=` — assignment operator
+
+It assigns a value to a variable.
+
+```python
+x = 10
+```
+
+This means: store `10` in `x`.
+
+### `==` — comparison operator
+
+It checks whether two values are equal. The result is `True` or `False`.
+
+```python
+x = 10
+
+print(x == 10)  # True
+print(x == 5)   # False
+```
+
+Example:
+
+```python
+password = "python123"
+
+if password == "python123":
+    print("Login successful")
+```
+
+Do not confuse:
+
+```python
+x = 5       # Assign 5 to x
+x == 5      # Check whether x equals 5
+```
+
+## 7. Difference between `for` and `while`
+
+Both are loops used to repeat code.
+
+### `for` loop
+
+Use a `for` loop when you know what you want to iterate over, such as a list, string, or range.
+
+```python
+for i in range(5):
+    print(i)
+```
+
+Output:
+
+```text
+0
+1
+2
+3
+4
+```
+
+Another example:
+
+```python
+fruits = ["apple", "banana", "mango"]
+
+for fruit in fruits:
+    print(fruit)
+```
+
+### `while` loop
+
+Use a `while` loop when you want to repeat code as long as a condition remains true.
+
+```python
+count = 1
+
+while count <= 5:
+    print(count)
+    count += 1
+```
+
+A `while` loop is useful when the number of repetitions is not known in advance.
+
+Be careful to update the condition; otherwise, you may create an infinite loop.
+
+```python
+while True:
+    print("This never stops")
+```
+
+## 8. What is a list?
+
+A **list** is an ordered and changeable collection of items. Lists are written using square brackets `[]`.
+
+```python
+fruits = ["apple", "banana", "mango"]
+```
+
+Features of a list:
+
+- It maintains order.
+- It can contain duplicate values.
+- It can store different data types.
+- Its contents can be changed.
+- Items are accessed using indexes.
+
+```python
+numbers = [10, 20, 30]
+
+print(numbers[0])  # 10
+
+numbers.append(40)
+numbers [docs.python](https://docs.python.org/3/tutorial/datastructures.html) = 25
+
+print(numbers)     # [10, 25, 30, 40]
+```
+
+Lists are useful when you need to store multiple related values.
+
+## 9. What is a dictionary?
+
+A **dictionary** stores data in `key: value` pairs. It is written using curly brackets `{}`.
+
+```python
+student = {
+    "name": "Amit",
+    "age": 21,
+    "course": "Computer Science"
+}
+```
+
+You access values using their keys:
+
+```python
+print(student["name"])  # Amit
+print(student["age"])   # 21
+```
+
+You can add or update items:
+
+```python
+student["city"] = "Mumbai"
+student["age"] = 22
+```
+
+A list uses numeric indexes:
+
+```python
+students[0]
+```
+
+A dictionary uses meaningful keys:
+
+```python
+student["name"]
+```
+
+Dictionaries are useful for representing structured data, such as a student, product, employee, or user profile. Python dictionaries are indexed by keys, and keys must be unique. [docs.python](https://docs.python.org/3/tutorial/datastructures.html)
+
+## 10. Why do we use functions?
+
+A **function** is a reusable block of code that performs a particular task.
+
+Functions help us:
+
+- Avoid repeating code.
+- Organize large programs.
+- Make code easier to understand.
+- Test individual parts of a program.
+- Reuse the same logic with different values.
+
+Example:
+
+```python
+def greet():
+    print("Hello, welcome!")
+
+greet()
+greet()
+```
+
+A function can accept parameters:
+
+```python
+def greet(name):
+    print("Hello", name)
+
+greet("Amit")
+greet("Priya")
+```
+
+Here, `name` is a parameter, and `"Amit"` or `"Priya"` is an argument.
+
+## 11. What does `return` do?
+
+The `return` statement sends a result back from a function to the place where the function was called.
+
+```python
+def add(a, b):
+    return a + b
+
+result = add(10, 5)
+print(result)
+```
+
+Output:
+
+```text
+15
+```
+
+Without `return`, a function normally returns `None`.
+
+```python
+def add(a, b):
+    print(a + b)
+
+result = add(10, 5)
+print(result)
+```
+
+Output:
+
+```text
+15
+None
+```
+
+`print()` displays a value, while `return` gives the value back so that it can be stored or used later.
+
+```python
+def square(number):
+    return number * number
+
+answer = square(4) + 10
+print(answer)  # 26
+```
+
+When Python reaches `return`, the function stops executing.
+
+## 12. Why does Python indexing start at 0?
+
+Python uses **zero-based indexing**, so the first item has index `0`.
+
+```python
+colors = ["red", "green", "blue"]
+
+print(colors[0])  # red
+print(colors [docs.python](https://docs.python.org/3/tutorial/datastructures.html))  # green
+print(colors [docs.python](https://docs.python.org/3/tutorial/introduction.html))  # blue
+```
+
+The index represents the offset from the beginning:
+
+- Index `0`: move zero positions from the beginning.
+- Index `1`: move one position.
+- Index `2`: move two positions.
+
+This also makes slicing convenient:
+
+```python
+colors[0:2]
+```
+
+Output:
+
+```python
+["red", "green"]
+```
+
+The starting position is included, while the ending position is excluded. Python strings and lists use this same zero-based indexing approach. [docs.python](https://docs.python.org/3/tutorial/introduction.html)
+
+## Quick Revision
+
+```python
+x = 10              # variable and assignment
+x == 10             # comparison
+10 / 3              # normal division
+10 // 3             # floor division
+10 % 3              # remainder
+
+name = input()      # returns str
+
+numbers = [1, 2, 3] # list
+
+user = {"name": "Amit"} # dictionary
+
+def add(a, b):
+    return a + b    # sends result back
+
+for i in range(3):
+    print(i)        # repeats for a sequence
+```
+

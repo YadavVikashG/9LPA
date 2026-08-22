@@ -1,0 +1,1 @@
+gh auth login and unset GITHUB_TOKEN

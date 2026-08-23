@@ -1,0 +1,75 @@
+Day 2 Python Test — Questions and Answers
+
+1. What is the difference between a list, tuple and set?
+
+Answer:
+A list is ordered, changeable, and allows duplicate values. A tuple is ordered but unchangeable, and it also allows duplicate values. A set is unordered, changeable, and stores only unique values.
+
+Example:
+my_list = [1, 2, 2]
+my_tuple = (1, 2, 2)
+my_set = {1, 2}
+
+2. Why are strings immutable?
+
+Answer:
+Strings are immutable because their contents cannot be changed after they are created. Any apparent modification creates a new string. This makes strings safer to share and allows them to be used as dictionary keys when appropriate.
+
+3. What does [::-1] do?
+
+Answer:
+[::-1] uses slicing with a step of -1, so it returns a sequence in reverse order.
+
+Example:
+text = "Python"
+print(text[::-1])
+
+Output:
+nohtyP
+
+4. What is a dictionary?
+
+Answer:
+A dictionary is a data structure that stores data as key-value pairs. Each key is used to access its corresponding value.
+
+Example:
+student = {"name": "Radha", "age": 24}
+
+5. Why is a dictionary useful for frequency counting?
+
+Answer:
+A dictionary can store each item as a key and its count as the value. It makes it easy to update and retrieve the frequency of each item.
+
+Example:
+counts[letter] = counts.get(letter, 0) + 1
+
+6. What is list comprehension?
+
+Answer:
+List comprehension is a short way to create a new list using an expression and a loop, optionally with a condition.
+
+Example:
+squares = [x * x for x in range(5)]
+
+This creates:
+[0, 1, 4, 9, 16]
+
+7. Difference between print() and return?
+
+Answer:
+print() displays a value on the screen. return sends a value back from a function so it can be stored, reused, or processed further. A return statement also ends the function's execution.
+
+8. What is local scope?
+
+Answer:
+Local scope is the area inside a function where variables created in that function can be accessed. A local variable usually cannot be accessed directly outside the function.
+
+9. What is the time complexity of searching an element in a list?
+
+Answer:
+Searching for an element in an unsorted Python list generally has O(n) time complexity because Python may need to check every element. If the element is found at the beginning, the search can finish earlier, but the worst-case complexity is O(n).
+
+10. Why can a set be useful when checking whether an item exists?
+
+Answer:
+A set is useful for membership checking because it generally checks whether an item exists in average O(1) time, whereas searching an unsorted list generally takes O(n) time. A set also stores each value only once.
